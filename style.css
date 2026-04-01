@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: rgba(30, 41, 59, 0.9);
+  position: sticky;
+  top: 0;
+}
+
+nav h2 {
+  color: #38bdf8;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* BOTONES */
+button, .btn {
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+/* BLOG */
+.blog {
+  padding: 40px;
+  text-align: center;
+}
+
+.blog-buttons a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #22c55e;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 200px;
+  text-align: center;
+}
+
+/* MENSAJE JUEGO */
+#mensaje {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+#intentos {
+  color: #38bdf8;
+}
+
+/* IMAGEN PERFIL */
+img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #38bdf8;
+}
+
+button {
+  margin: 5px;
+}
