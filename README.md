@@ -6,4 +6,5 @@ vercel: https://data-connect-helb.vercel.app/
 
 
 
-github: https://github.com/w50948244-alt/DataConnect
+github: https://w50948244-alt.github.io/DataConnect/
+
