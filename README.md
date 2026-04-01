@@ -3,4 +3,7 @@ Data Connect es un grupo académico enfocado en el estudio y aplicación de tecn
 
 
 vercel: https://data-connect-helb.vercel.app/
-github: 
+
+
+
+github: https://github.com/w50948244-alt/DataConnect
