@@ -1,20 +1,22 @@
+
 let numeroSecreto = 0;
 let intentos = 0;
 let juegoActivo = false;
+
 
 function generarNumero() {
   numeroSecreto = Math.floor(Math.random() * 10) + 1;
   intentos = 0;
   juegoActivo = true;
 
-  document.getElementById("mensaje").innerText = "Número generado, ¡empieza a jugar!";
-  document.getElementById("mensaje").style.color = "#38bdf8";
+  actualizarMensaje("🎯 Número generado, intenta adivinar", "#38bdf8", 0);
   document.getElementById("intentos").innerText = "";
 }
 
+
 function intentar() {
   if (!juegoActivo) {
-    alert("Primero presiona el botón ALEATORIO");
+    alert("Primero presiona el botón ALEATORIO 🎲");
     return;
   }
 
@@ -30,41 +32,41 @@ function intentar() {
   intentos++;
 
   let diferencia = Math.abs(numeroSecreto - valor);
-  let mensaje = document.getElementById("mensaje");
+  let progreso = Math.max(0, 100 - diferencia * 15);
 
   if (valor === numeroSecreto) {
-    mensaje.innerText = "🎉 ¡Felicidades! Adivinaste el número";
-    mensaje.style.color = "#22c55e";
-
+    actualizarMensaje("🎉 ¡Felicidades! Adivinaste el número", "#22c55e", 100);
     document.getElementById("intentos").innerText =
       "Lo lograste en " + intentos + " intento(s)";
-
     juegoActivo = false;
-  } 
-  else {
-    if (diferencia === 1) {
-      mensaje.innerText = "🔥 ¡Estás MUY cerca!";
-      mensaje.style.color = "#facc15";
-    } 
-    else if (diferencia <= 3) {
-      mensaje.innerText = "😮 Estás cerca";
-      mensaje.style.color = "#fb923c";
-    } 
-    else {
-      mensaje.innerText = "❄️ Estás lejos";
-      mensaje.style.color = "#60a5fa";
-    }
+  } else if (diferencia === 1) {
+    actualizarMensaje("🔥 ¡MUY cerca!", "#facc15", progreso);
+  } else if (diferencia <= 3) {
+    actualizarMensaje("😮 Estás cerca", "#fb923c", progreso);
+  } else {
+    actualizarMensaje("❄️ Estás lejos", "#60a5fa", progreso);
   }
 
   input.value = "";
 }
 
+// REINICIAR
 function reiniciar() {
   numeroSecreto = 0;
   intentos = 0;
   juegoActivo = false;
 
-  document.getElementById("mensaje").innerText = "Juego reiniciado. Presiona ALEATORIO";
-  document.getElementById("mensaje").style.color = "#94a3b8";
+  actualizarMensaje("Juego reiniciado. Presiona ALEATORIO", "#94a3b8", 0);
   document.getElementById("intentos").innerText = "";
+}
+
+function actualizarMensaje(texto, color, progreso) {
+  let mensaje = document.getElementById("mensaje");
+  mensaje.innerText = texto;
+  mensaje.style.color = color;
+
+  let barra = document.getElementById("barra");
+  if (barra) {
+    barra.style.width = progreso + "%";
+  }
 }
