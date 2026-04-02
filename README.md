@@ -1,4 +1,4 @@
-# ing warlli romno
+# ing warlli romano
 
 
 vercel: https://portafoliowr.vercel.app/
